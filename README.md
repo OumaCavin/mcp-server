@@ -20,23 +20,72 @@ MCP is a standardized specification that allows AI models and agents to interact
 
 ## Installation
 
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/OumaCavin/mcp-server.git
+cd mcp-server
+```
+
+### 2. Create Virtual Environment
+
+**Using venv (recommended):**
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+**Using virtualenv:**
+
+```bash
+# Install virtualenv if not available
+pip install virtualenv
+
+# Create virtual environment
+virtualenv venv
+
+# Activate on Linux/macOS
+source venv/bin/activate
+
+# Activate on Windows
+venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
+```
+
+### 4. Verify Installation
+
+```bash
+python -c "import fastapi; print(f'FastAPI version: {fastapi.__version__}')"
 ```
 
 ## Usage
 
 ### Running the Server
 
+Once the virtual environment is activated, run:
+
 ```bash
-cd app
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Or directly:
+### Deactivating the Virtual Environment
+
+When finished, deactivate the virtual environment:
 
 ```bash
-python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+deactivate
 ```
 
 ### API Endpoints
